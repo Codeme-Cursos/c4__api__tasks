@@ -27,11 +27,7 @@ const postTask = async (req, res) => {
 const getTasks = async (req, res) => {
   try {
     let gotTasks = await TaskModel.findAll();
-    if (gotTasks.length > 0) {
-      res.status(200).json(gotTasks);
-    } else {
-      res.status(404).json([]);
-    }
+    res.status(200).json(gotTasks);
   } catch (error) {
     res.status(500).json({
       error: error,
