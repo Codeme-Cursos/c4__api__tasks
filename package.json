@@ -1,5 +1,5 @@
 {
-  "name": "c6__task__api",
+  "name": "c4__api_task",
   "version": "1.0.0",
   "description": "* Crea un archivo package.json \r ```bash\r npm init -y\r ```\r * Crea una carperta \"src\"\r * Crea un archivo \"src/index.js\"\r * Crea una carpeta \"src/routes\" \r * Crea una carpeta \"src/controllers\"",
   "main": "index.js",

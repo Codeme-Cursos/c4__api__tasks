@@ -31,11 +31,6 @@ npm i sequelize@~4.43.2
 ```bash
 npm i morgan
 ```
-##### Instalación de Babel, permite usar código moderno de JS en nodeJS 
-[https://babeljs.io/docs/en/usage]
-```bash
-npm i @babel/polyfill @babel/runtime
-```
 
 ##### Instalación de Helmet, permite configurar cabezeras http para mejorar la seguridad de la api 
 ```bash
@@ -47,7 +42,6 @@ npm i helmet
 npm i compression 
 ```
 
-
 ##### Instalación de Cors, permite que se puedan solicitar recursos en una web desde un origen distinto.
 ```bash
 npm i cors 
@@ -55,29 +49,12 @@ npm i cors
 
 ##### Todos los Módulos principales
 ```bash
-npm i express pg pg-hstore sequelize morgan @babel/polyfill @babel/runtime dotenv helmet compression cors
+npm i express pg pg-hstore sequelize morgan dotenv helmet compression cors
 ```
 
 ## Instalación de Módulos de Desarrollo
 
-##### Instalación de Babel, permite usar código moderno de JS en nodeJS
-[https://babeljs.io/docs/en/usage]
-```bash
-npm i @babel/core @babel/cli @babel/preset-env @babel/node @babel/plugin-transform-runtime -D 
-```
-1. Crea archivo ".babelrc" en la carpeta raíz del proyecto
-2. Agrega el siguiente contenido:
-```json
-{
-    "presets": [
-        "@babel/preset-env"
-    ],
-    "plugins": [
-        ["@babel/transform-runtime"]
-    ]
-}
-```
-3. Reemplaza el comando "test" dentro del "scripts", del archivo "package.json":
+#### Reemplaza el comando "test" dentro del "scripts", del archivo "package.json":
 Esto:
 ```json
 "scripts": {
@@ -87,21 +64,28 @@ Esto:
 Por:
 ```json
 "scripts": {
-    "build": "babel src --out-dir dist",
-    "start": "node -r dotenv/config dist/app.js"
+    "start": "node -r dotenv/config index.js"
 }
 ```
 ##### Instalación de Nodemon, para que el servidor se reinicie automáticamente cada vez que modifiquemos el código
 ```bash
 npm i nodemon -D
 ```
-* Agrega el siguiente script dentro de "scripts" del archivo "package.json"
+#### Agrega el siguiente script dentro de "scripts" del archivo "package.json"
 ```json
 "scripts": {
-    "dev": "nodemon -r dotenv/config src/app.js --exec babel-node",
+    "dev": "nodemon -r dotenv/config index.js",
   }
 ```
-##### Todos los Módulos de Desarrollo
+
+# Scripts del Proyecto
+
+#### Scripts para levantar un servidor local usando Node
 ```bash
-npm i @babel/core @babel/cli @babel/preset-env @babel/node nodemon @babel/plugin-transform-runtime -D
-```
+npm run start
+``` 
+
+#### Scripts para levantar un servidor local usando Nodemon
+```bash
+npm run dev
+``` 
